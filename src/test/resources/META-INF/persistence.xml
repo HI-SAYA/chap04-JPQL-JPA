@@ -2,6 +2,13 @@
 <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
     <!-- 엔티티 매니저 팩토리를 식별하기 위한 이름 설정 -->
     <persistence-unit name="jpatest">
+        <class>com.ohgiraffers.section01.simple.Menu</class>
+        <class>com.ohgiraffers.section02.parameter.Menu</class>
+        <class>com.ohgiraffers.section03.projection.Menu</class>
+        <class>com.ohgiraffers.section03.projection.BiDirectionCategory</class>
+        <class>com.ohgiraffers.section03.projection.BiDirectionMenu</class>
+        <class>com.ohgiraffers.section03.projection.EmbeddedMenu</class>
+        <class>com.ohgiraffers.section03.projection.Category</class>
         <properties>
             <!-- 데이터 베이스 연결 정보 -->
             <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
