@@ -60,7 +60,7 @@ public class JoinTests {
         //then
         assertNotNull(menuList);
         menuList.forEach(row -> {
-            Stream.of(row).forEach(col -> System.out.print(col + " "));
+            Stream.of(row).forEach(col -> System.out.print(col + " ")); // 한우딸기국밥 한식 개행 앙버터김치찜 한식 개행
             System.out.println(); // 단순 개행구문
             // 실제 메뉴가 없는 경우(null 디저트 등)에도 조회가 된다 : outer join 했기 때문에
         });

@@ -60,7 +60,7 @@ public class GroupFunctionTests {
         //when
         String jpql = "SELECT SUM(m.menuPrice) FROM menu_section05 m WHERE m.categoryCode = :categoryCode";
         //then
-        assertThrows(NullPointerException.class, () -> { // 이 구문을 실행하면 Exception이 발생할 것이다.
+        assertThrows(NullPointerException.class, () -> { // 이 구문을 실행하면 Exception이 발생할 것이다. 람다식 내부에 실행할 코드 정의
             long sumOfPrice = entityManager.createQuery(jpql, Long.class)
                 .setParameter("categoryCode", categoryCodeParameter)
                 .getSingleResult();
@@ -68,7 +68,7 @@ public class GroupFunctionTests {
         // 발생할 예상 Exception 타입, {실행할 구문}
         // categoryCode = 1 인 0개 이기 때문에 SUM을 사용하면 Null이 나올 것이다. -> assertThrows를 사용하여 Exception 대비
 
-        assertDoesNotThrow(() -> {
+        assertDoesNotThrow(() -> { // 예외가 발생하지 않아야 함을 검증하는 부분, 예외가 발생하지 않아야 하는 코드를 람다식 내부에 정의
             Long sumOfPrice = entityManager.createQuery(jpql, Long.class) // 객체타입 Long으로 Exception 대비 ****
                     .setParameter("categoryCode", categoryCodeParameter)
                     .getSingleResult();
