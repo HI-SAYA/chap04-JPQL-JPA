@@ -53,7 +53,7 @@ public class ProjectionTests {
 
 
     @Test
-    public void 양방향_연관관계_엔터티_프로젝션_테스트() {
+    public void 양방향_연관관계_엔터티_프로젝션_테스트() {   // 파라미터 바인딩
         //given
         int menuCodeParameter = 3;
         //when
